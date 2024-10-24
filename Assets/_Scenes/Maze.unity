@@ -22951,7 +22951,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -514765243
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f44d66cd5191c4fb0af526088b2e8e11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -22972,9 +22972,9 @@ Transform:
   m_GameObject: {fileID: 1657219670}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.27, y: -3.45, z: 0}
-  m_LocalScale: {x: 0.1846, y: 0.1846, z: 0.1846}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -5.42, y: -3.2, z: 0}
+  m_LocalScale: {x: 0.24, y: 0.24, z: 0.24}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22990,9 +22990,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1460fc84ad140b6ae3373a96260e59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  player: {fileID: 0}
+  speed: 1.5
+  player: {fileID: 354452032}
   damage: 1
+  randomSpawnRangeX: {x: -8, y: 8}
+  randomSpawnRangeY: {x: -4, y: 4}
 --- !u!61 &1657219674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30201,8 +30203,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1984554156}
   - {fileID: 892869324}
+  - {fileID: 1657219672}
   - {fileID: 1546725717}
   - {fileID: 1334273849}
   - {fileID: 354452037}
   - {fileID: 491009615}
-  - {fileID: 1657219672}

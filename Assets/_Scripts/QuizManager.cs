@@ -16,11 +16,22 @@ public class QuizManager : MonoBehaviour
         generateQuestion();
     }
 
-    public void correct()
+  public void correct()
+{
+    if (QnA.Count > 0)
     {
         QnA.RemoveAt(currentQuestion);
-        generateQuestion();
+        if (QnA.Count > 0)
+        {
+            generateQuestion();
+        }
+        else
+        {
+            Debug.Log("Out of Questions");
+            // Handle end of quiz here, like showing a results screen or disabling options
+        }
     }
+}
 
     void SetAnswers()
     {

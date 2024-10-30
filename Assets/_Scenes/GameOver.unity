@@ -181,7 +181,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1562474670
 Canvas:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ Canvas:
   m_GameObject: {fileID: 1562474667}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -199,10 +199,10 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -514765243
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1562474671
@@ -214,7 +214,7 @@ RectTransform:
   m_GameObject: {fileID: 1562474667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1904835840}
@@ -222,9 +222,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 342, y: 210.5}
+  m_SizeDelta: {x: 684, y: 421}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1670374721
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 1904835840}
   - component: {fileID: 1904835842}
   - component: {fileID: 1904835841}
+  - component: {fileID: 1904835843}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -451,6 +452,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904835839}
   m_CullTransparentMesh: 1
+--- !u!95 &1904835843
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904835839}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2011545182
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +614,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -5392230527302747351, guid: 0883bba694599436492ff108187837ba, type: 2}
     value: {fileID: 2112206708}
+  - key: {fileID: -3236677730761508434, guid: 0883bba694599436492ff108187837ba, type: 2}
+    value: {fileID: 1904835843}
   m_ExposedReferences:
     m_References: []
 --- !u!212 &2112206710
@@ -634,7 +658,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -514765243
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f44d66cd5191c4fb0af526088b2e8e11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

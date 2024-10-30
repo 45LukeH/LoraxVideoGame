@@ -15,14 +15,14 @@ TagManager:
   - 
   - Water
   - UI
+  - Background
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
+  - Foreground
   - 
   - 
   - 
@@ -50,4 +50,13 @@ TagManager:
     locked: 0
   - name: Play
     uniqueID: 3780202053
+    locked: 0
+  - name: Ground
+    uniqueID: 1718870815
+    locked: 0
+  - name: Add ins
+    uniqueID: 1125697603
+    locked: 0
+  - name: Popups
+    uniqueID: 2930188353
     locked: 0

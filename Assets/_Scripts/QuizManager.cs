@@ -9,16 +9,34 @@ public class QuizManager : MonoBehaviour
     public GameObject[] options;
     public int currentQuestion;
 
+    public GameObject Quizpanel;
+    public GameObject GoPanel;
+
     public TMP_Text QuestionTxt;
+    int totalQuestions = 0;
+    public int score;
+
     [SerializeField] private Health playerHealth;
 
     private void Start()
     {
+        totalQuestions = QnA.Count;
+        GoPanel.SetActive(false);
         generateQuestion();
     }
 
+    public void GameOver()
+    {
+        Quizpanel.SetActive(false);
+        GoPanel.SetActive(true);
+        
+    }
+
+
     public void correct()
     {
+        // when you are right
+        score += 1;
         Debug.Log("Correct Answer Triggered in QuizManager");
 
         // Only remove the current question on a correct answer
@@ -68,6 +86,7 @@ public class QuizManager : MonoBehaviour
         {
             Debug.Log("Out of Questions");
             // Optionally, handle the end of the quiz here
+            GameOver();
         }
     }
 }

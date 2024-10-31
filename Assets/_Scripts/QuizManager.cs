@@ -10,28 +10,35 @@ public class QuizManager : MonoBehaviour
     public int currentQuestion;
 
     public TMP_Text QuestionTxt;
+    [SerializeField] private Health playerHealth;
 
     private void Start()
     {
         generateQuestion();
     }
 
-  public void correct()
-{
-    if (QnA.Count > 0)
+    public void correct()
     {
-        QnA.RemoveAt(currentQuestion);
+        Debug.Log("Correct Answer Triggered in QuizManager");
+
+        // Only remove the current question on a correct answer
         if (QnA.Count > 0)
         {
-            generateQuestion();
+            QnA.RemoveAt(currentQuestion); // Remove the answered question
         }
-        else
-        {
-            Debug.Log("Out of Questions");
-            // Handle end of quiz here, like showing a results screen or disabling options
-        }
+
+        // Generate the next question
+        generateQuestion();
     }
-}
+
+    public void IncorrectAnswer()
+    {
+        playerHealth.TakeDamage(1);
+        Debug.Log("Incorrect Answer Triggered in QuizManager");
+
+        // Generate the next question regardless of correct/incorrect answer
+        generateQuestion();
+    }
 
     void SetAnswers()
     {
@@ -40,7 +47,7 @@ public class QuizManager : MonoBehaviour
             options[i].GetComponent<AnswerScript>().isCorrect = false;
             options[i].transform.GetChild(0).GetComponent<TMP_Text>().text = QnA[currentQuestion].Answers[i];
         
-            if(QnA[currentQuestion].CorrectAnswer == i + 1)
+            if (QnA[currentQuestion].CorrectAnswer == i + 1)
             {
                 options[i].GetComponent<AnswerScript>().isCorrect = true;
             }
@@ -49,18 +56,18 @@ public class QuizManager : MonoBehaviour
 
     void generateQuestion()
     {
-        if(QnA.Count >0)
+        // Check if there are questions left
+        if (QnA.Count > 0)
         {
-
-        
-        currentQuestion = Random.Range(0, QnA.Count);
-
-        QuestionTxt.text = QnA[currentQuestion].Question;
-        SetAnswers();
+            // Select a new question index
+            currentQuestion = Random.Range(0, QnA.Count);
+            QuestionTxt.text = QnA[currentQuestion].Question;
+            SetAnswers();
         }
         else
         {
             Debug.Log("Out of Questions");
+            // Optionally, handle the end of the quiz here
         }
     }
 }

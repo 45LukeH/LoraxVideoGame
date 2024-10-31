@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,5 +25,10 @@ public class ThneedSeed : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Seed collected");
         }
+    }
+
+    internal bool isCollectedBy(GameObject lorax)
+    {
+        throw new NotImplementedException();
     }
 }

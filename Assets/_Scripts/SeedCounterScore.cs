@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro; // Import TextMeshPro namespace
+using System;
 
 public class SeedCounterScore : MonoBehaviour
 {
     public int scoreValue = 0; // Tracks score
     private TextMeshProUGUI scoreText; // Reference to the UI TextMeshPro component for displaying score
     public GameObject lorax; // Reference to the Lorax GameObject
+
+    public static Action OnSeedCollected { get; internal set; }
 
     void Start()
     {

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class Healthbar : MonoBehaviour
 {
@@ -18,5 +19,9 @@ public class Healthbar : MonoBehaviour
     {
         currenthealthBar.fillAmount = playerHealth.currentHealth / 10;
     }
-    
+
+    internal void UpdateHeartUI(int currentHealth)
+    {
+        throw new NotImplementedException();
+    }
 }

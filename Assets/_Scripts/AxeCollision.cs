@@ -13,7 +13,15 @@ public class AxeCollision : MonoBehaviour
             {
                 loraxHealth.TakeDamage(1);
             }
-            Destroy(gameObject);
+
+            // Find SceneManagerController to increment axe collision count
+            Level2SceneManager sceneManager = FindObjectOfType<Level2SceneManager>();
+            if (sceneManager != null)
+            {
+                sceneManager.HitByAxe(); // Notify SceneManagerController
+            }
+
+            Destroy(gameObject); // Destroy Axe on collision
         }
     }
 }

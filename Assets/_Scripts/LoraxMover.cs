@@ -5,8 +5,8 @@ using UnityEngine;
 public class LoraxMover : MonoBehaviour
 {
     public float speed;
-    private int seedCount = 0;
-    public TextAlignment seedCountText;
+    //private int seedCount = 0;
+    //public TextAlignment seedCountText;
     private bool isKnockedDown = false;
 
     // Start is called before the first frame update
@@ -39,35 +39,35 @@ public class LoraxMover : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("ThneedSeed"))
-        {
-            seedCount++;
-            Destroy(other.gameObject);
-            Debug.Log("Seeds: " + seedCount);
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Check if the object we collided with is tagged as "Axe"
-        if (collision.gameObject.CompareTag("Axe"))
-        {
-            // Knock the Lorax down and end the game
-            KnockDownLorax();
-        }
-    }
-    private void KnockDownLorax()
-    {
-        // Disable movement by setting isKnockedDown to true
-        isKnockedDown = true;
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.gameObject.CompareTag("ThneedSeed"))
+    //    {
+    //        seedCount++;
+    //        Destroy(other.gameObject);
+    //        Debug.Log("Seeds: " + seedCount);
+    //    }
+    //}
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    // Check if the object we collided with is tagged as "Axe"
+    //    if (collision.gameObject.CompareTag("Axe"))
+    //    {
+    //        // Knock the Lorax down and end the game
+    //        KnockDownLorax();
+    //    }
+    //}
+    //private void KnockDownLorax()
+    //{
+    //    // Disable movement by setting isKnockedDown to true
+    //    isKnockedDown = true;
 
-        // Optional: Add a visual or sound effect for the knockdown here (e.g., animation or sound)
-        Debug.Log("Lorax has been knocked down!");
+    //    // Optional: Add a visual or sound effect for the knockdown here (e.g., animation or sound)
+    //    Debug.Log("Lorax has been knocked down!");
 
-        // End the game after a short delay (e.g., 2 seconds)
-        Invoke("EndGame", 2f);
-    }
+    //    // End the game after a short delay (e.g., 2 seconds)
+    //    Invoke("EndGame", 2f);
+    //}
     private void EndGame()
     {
         // For simplicity, you can reload the current scene to simulate game over

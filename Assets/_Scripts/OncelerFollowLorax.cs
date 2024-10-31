@@ -13,7 +13,8 @@ public class OncelerFollowLorax : MonoBehaviour
     public Vector2 randomSpawnRangeX = new Vector2(-10f, 10f); // X-axis range for random spawn
     public Vector2 randomSpawnRangeY = new Vector2(-5f, 5f);   // Y-axis range for random spawn
 
-    // Start is called before the first frame update
+    private Level3SceneManager sceneManager; // Reference to Level3SceneManager
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Lorax");
@@ -23,10 +24,16 @@ public class OncelerFollowLorax : MonoBehaviour
             playerHealth = player.GetComponent<PlayerHealth>();
         }
 
+        // Get the Level3SceneManager instance
+        sceneManager = FindObjectOfType<Level3SceneManager>();
+        if (sceneManager == null)
+        {
+            Debug.LogError("Level3SceneManager not found in the scene.");
+        }
+
         startingPosition = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (player != null)
@@ -50,6 +57,12 @@ public class OncelerFollowLorax : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
+            }
+
+            // Notify the scene manager of the collision
+            if (sceneManager != null)
+            {
+                sceneManager.HitByOnceler();
             }
 
             // Randomize spawn position after collision with Lorax
